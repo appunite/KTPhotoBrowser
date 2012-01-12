@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import "KTThumbsViewController.h"
+#import <KTPhotoBrowser/KTThumbsViewController.h>
+
 #import "PhotoPickerController.h"
 #import "Photos.h"
 

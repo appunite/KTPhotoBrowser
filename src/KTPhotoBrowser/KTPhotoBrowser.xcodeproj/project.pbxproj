@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBC933BE14BEF59000763C22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC933BD14BEF59000763C22 /* Foundation.framework */; };
+		BBC933D714BEF5B600763C22 /* KTThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933CA14BEF5B600763C22 /* KTThumbView.m */; };
+		BBC933D814BEF5B600763C22 /* KTThumbView.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933CB14BEF5B600763C22 /* KTThumbView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933D914BEF5B600763C22 /* KTThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933CC14BEF5B600763C22 /* KTThumbsViewController.m */; };
+		BBC933DA14BEF5B600763C22 /* KTThumbsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933CD14BEF5B600763C22 /* KTThumbsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933DB14BEF5B600763C22 /* KTThumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933CE14BEF5B600763C22 /* KTThumbsView.m */; };
+		BBC933DC14BEF5B600763C22 /* KTThumbsView.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933CF14BEF5B600763C22 /* KTThumbsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933DD14BEF5B600763C22 /* KTPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933D014BEF5B600763C22 /* KTPhotoView.m */; };
+		BBC933DE14BEF5B600763C22 /* KTPhotoView.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933D114BEF5B600763C22 /* KTPhotoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933DF14BEF5B600763C22 /* KTPhotoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933D214BEF5B600763C22 /* KTPhotoScrollViewController.m */; };
+		BBC933E014BEF5B600763C22 /* KTPhotoScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933D314BEF5B600763C22 /* KTPhotoScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933E114BEF5B600763C22 /* KTPhotoBrowserGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC933D414BEF5B600763C22 /* KTPhotoBrowserGlobal.m */; };
+		BBC933E214BEF5B600763C22 /* KTPhotoBrowserGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933D514BEF5B600763C22 /* KTPhotoBrowserGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933E314BEF5B600763C22 /* KTPhotoBrowserDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC933D614BEF5B600763C22 /* KTPhotoBrowserDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBC933E614BEF61D00763C22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC933E514BEF61D00763C22 /* UIKit.framework */; };
+		BBC933E814BEF6AF00763C22 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC933E714BEF6AF00763C22 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BBC933BA14BEF59000763C22 /* libKTPhotoBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKTPhotoBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBC933BD14BEF59000763C22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BBC933C114BEF59000763C22 /* KTPhotoBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KTPhotoBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		BBC933CA14BEF5B600763C22 /* KTThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTThumbView.m; sourceTree = SOURCE_ROOT; };
+		BBC933CB14BEF5B600763C22 /* KTThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTThumbView.h; sourceTree = SOURCE_ROOT; };
+		BBC933CC14BEF5B600763C22 /* KTThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTThumbsViewController.m; sourceTree = SOURCE_ROOT; };
+		BBC933CD14BEF5B600763C22 /* KTThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTThumbsViewController.h; sourceTree = SOURCE_ROOT; };
+		BBC933CE14BEF5B600763C22 /* KTThumbsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTThumbsView.m; sourceTree = SOURCE_ROOT; };
+		BBC933CF14BEF5B600763C22 /* KTThumbsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTThumbsView.h; sourceTree = SOURCE_ROOT; };
+		BBC933D014BEF5B600763C22 /* KTPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPhotoView.m; sourceTree = SOURCE_ROOT; };
+		BBC933D114BEF5B600763C22 /* KTPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPhotoView.h; sourceTree = SOURCE_ROOT; };
+		BBC933D214BEF5B600763C22 /* KTPhotoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPhotoScrollViewController.m; sourceTree = SOURCE_ROOT; };
+		BBC933D314BEF5B600763C22 /* KTPhotoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPhotoScrollViewController.h; sourceTree = SOURCE_ROOT; };
+		BBC933D414BEF5B600763C22 /* KTPhotoBrowserGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTPhotoBrowserGlobal.m; sourceTree = SOURCE_ROOT; };
+		BBC933D514BEF5B600763C22 /* KTPhotoBrowserGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPhotoBrowserGlobal.h; sourceTree = SOURCE_ROOT; };
+		BBC933D614BEF5B600763C22 /* KTPhotoBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPhotoBrowserDataSource.h; sourceTree = SOURCE_ROOT; };
+		BBC933E414BEF5D900763C22 /* KTPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KTPhotoBrowser.bundle; sourceTree = SOURCE_ROOT; };
+		BBC933E514BEF61D00763C22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BBC933E714BEF6AF00763C22 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBC933B714BEF59000763C22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC933E814BEF6AF00763C22 /* QuartzCore.framework in Frameworks */,
+				BBC933E614BEF61D00763C22 /* UIKit.framework in Frameworks */,
+				BBC933BE14BEF59000763C22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBC933AF14BEF59000763C22 = {
+			isa = PBXGroup;
+			children = (
+				BBC933BF14BEF59000763C22 /* KTPhotoBrowser */,
+				BBC933BC14BEF59000763C22 /* Frameworks */,
+				BBC933BB14BEF59000763C22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBC933BB14BEF59000763C22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBC933BA14BEF59000763C22 /* libKTPhotoBrowser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBC933BC14BEF59000763C22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBC933E714BEF6AF00763C22 /* QuartzCore.framework */,
+				BBC933E514BEF61D00763C22 /* UIKit.framework */,
+				BBC933BD14BEF59000763C22 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBC933BF14BEF59000763C22 /* KTPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				BBC933CA14BEF5B600763C22 /* KTThumbView.m */,
+				BBC933CB14BEF5B600763C22 /* KTThumbView.h */,
+				BBC933CC14BEF5B600763C22 /* KTThumbsViewController.m */,
+				BBC933CD14BEF5B600763C22 /* KTThumbsViewController.h */,
+				BBC933CE14BEF5B600763C22 /* KTThumbsView.m */,
+				BBC933CF14BEF5B600763C22 /* KTThumbsView.h */,
+				BBC933D014BEF5B600763C22 /* KTPhotoView.m */,
+				BBC933D114BEF5B600763C22 /* KTPhotoView.h */,
+				BBC933D214BEF5B600763C22 /* KTPhotoScrollViewController.m */,
+				BBC933D314BEF5B600763C22 /* KTPhotoScrollViewController.h */,
+				BBC933D414BEF5B600763C22 /* KTPhotoBrowserGlobal.m */,
+				BBC933D514BEF5B600763C22 /* KTPhotoBrowserGlobal.h */,
+				BBC933D614BEF5B600763C22 /* KTPhotoBrowserDataSource.h */,
+				BBC933E414BEF5D900763C22 /* KTPhotoBrowser.bundle */,
+				BBC933C014BEF59000763C22 /* Supporting Files */,
+			);
+			path = KTPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		BBC933C014BEF59000763C22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBC933C114BEF59000763C22 /* KTPhotoBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BBC933B814BEF59000763C22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC933D814BEF5B600763C22 /* KTThumbView.h in Headers */,
+				BBC933DA14BEF5B600763C22 /* KTThumbsViewController.h in Headers */,
+				BBC933DC14BEF5B600763C22 /* KTThumbsView.h in Headers */,
+				BBC933DE14BEF5B600763C22 /* KTPhotoView.h in Headers */,
+				BBC933E014BEF5B600763C22 /* KTPhotoScrollViewController.h in Headers */,
+				BBC933E214BEF5B600763C22 /* KTPhotoBrowserGlobal.h in Headers */,
+				BBC933E314BEF5B600763C22 /* KTPhotoBrowserDataSource.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BBC933B914BEF59000763C22 /* KTPhotoBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBC933C714BEF59000763C22 /* Build configuration list for PBXNativeTarget "KTPhotoBrowser" */;
+			buildPhases = (
+				BBC933B614BEF59000763C22 /* Sources */,
+				BBC933B714BEF59000763C22 /* Frameworks */,
+				BBC933B814BEF59000763C22 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KTPhotoBrowser;
+			productName = KTPhotoBrowser;
+			productReference = BBC933BA14BEF59000763C22 /* libKTPhotoBrowser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBC933B114BEF59000763C22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = BBC933B414BEF59000763C22 /* Build configuration list for PBXProject "KTPhotoBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BBC933AF14BEF59000763C22;
+			productRefGroup = BBC933BB14BEF59000763C22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBC933B914BEF59000763C22 /* KTPhotoBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBC933B614BEF59000763C22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC933D714BEF5B600763C22 /* KTThumbView.m in Sources */,
+				BBC933D914BEF5B600763C22 /* KTThumbsViewController.m in Sources */,
+				BBC933DB14BEF5B600763C22 /* KTThumbsView.m in Sources */,
+				BBC933DD14BEF5B600763C22 /* KTPhotoView.m in Sources */,
+				BBC933DF14BEF5B600763C22 /* KTPhotoScrollViewController.m in Sources */,
+				BBC933E114BEF5B600763C22 /* KTPhotoBrowserGlobal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BBC933C514BEF59000763C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BBC933C614BEF59000763C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBC933C814BEF59000763C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/KTPhotoBrowser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KTPhotoBrowser/KTPhotoBrowser-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/KTPhotoBrowser;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BBC933C914BEF59000763C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/KTPhotoBrowser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KTPhotoBrowser/KTPhotoBrowser-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/KTPhotoBrowser;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBC933B414BEF59000763C22 /* Build configuration list for PBXProject "KTPhotoBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC933C514BEF59000763C22 /* Debug */,
+				BBC933C614BEF59000763C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBC933C714BEF59000763C22 /* Build configuration list for PBXNativeTarget "KTPhotoBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBC933C814BEF59000763C22 /* Debug */,
+				BBC933C914BEF59000763C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBC933B114BEF59000763C22 /* Project object */;
+}

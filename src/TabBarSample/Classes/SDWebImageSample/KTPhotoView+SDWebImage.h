@@ -5,7 +5,8 @@
 //  Created by Henrik Nyh on 3/18/10.
 //
 
-#import "KTPhotoView.h"
+#import <KTPhotoBrowser/KTPhotoView.h>
+
 #import "SDWebImageManagerDelegate.h"
 
 @interface KTPhotoView (SDWebImage) <SDWebImageManagerDelegate>

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KTThumbsViewController.h"
+#import <KTPhotoBrowser/KTPhotoBrowserDataSource.h>
+#import <KTPhotoBrowser/KTThumbsViewController.h>
+
 
 @class FlickrDataSource;
 

@@ -19,13 +19,17 @@ Using KTPhotoBrowser in Your Project
 
 To use KTPhotoBrowser copy the source code into your project then add a data source class for your photos.  Here is how:
 
-1. Clone the KTPhotoBrowser git repository: `git clone http://github.com/kirbyt/KTPhotoBrowser.git`.
-2. Copy the contents in the folder src/KTPhotoBrowser to your project. A simple way is to use the Finder to drag and drop the src/KTPhotoBrowser directory into your Xcode project. Be sure to mark the "Copy items into destination group's folder (if need)" option.
-3. Add a new class to your project called "DataSource" or something similar. This class MUST implement the protocol **KTPhotoBrowserDataSource**. 
-4. Implement the methods required by the protocol KTPhotoBrowserDataSource.
-5. Implement the optional methods if needed.
-6. Create a view controller that derives from the class **KTThumbsViewController** and stick it inside a navigation controller.
-7. In your view controller's viewDidLoad method call `[self setDataSource:anInstanceOfYourDataSource]`  to display the list of thumbnails in the scroll view.
+1. Add sub module in your project: `git submodule add http://github.com/appunite/KTPhotoBrowser.git` Frameworks/KTPhotoBrowser
+2. open Frameworks/KTPhotoBrowser/src/KTPhotoBrowser
+3. Copy KTPhotoBrowser.xcodeproj to your project Frameworks group.
+4. Go to your project -> select correct target -> build phases
+5. Add KTPhotoBrowser to your Target Dependences
+6. Add libKTPhotoBrowser.a to your Link Binary With Libraries
+7. Add a new class to your project called "DataSource" or something similar. This class MUST implement the protocol **KTPhotoBrowserDataSource**. 
+8. Implement the methods required by the protocol KTPhotoBrowserDataSource.
+9. Implement the optional methods if needed.
+10. Create a view controller that derives from the class **KTThumbsViewController** and stick it inside a navigation controller.
+11. In your view controller`s viewDidLoad method call `[self setDataSource:anInstanceOfYourDataSource]`  to display the list of thumbnails in the scroll view.
 
 You can also load the image viewer directly without the thumbnail list. Just copy the code from `didSelectThumbAtIndex:` in KTThumbsViewController.
 

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KTPhotoBrowserDataSource.h"
+#import <KTPhotoBrowser/KTPhotoBrowserDataSource.h>
+
 
 @protocol PhotosDelegate;
 

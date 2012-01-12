@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KTPhotoBrowserDataSource.h"
+#import <KTPhotoBrowser/KTPhotoBrowserDataSource.h>
 
 
 @interface FlickrPhotosDataSource : NSObject <KTPhotoBrowserDataSource>

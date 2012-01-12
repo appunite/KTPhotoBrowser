@@ -5,7 +5,7 @@
 //  Created by Henrik Nyh on 3/18/10.
 //
 
-#import "KTThumbView.h"
+#import <KTPhotoBrowser/KTThumbView.h>
 #import "SDWebImageManagerDelegate.h"
 
 @interface  KTThumbView (SDWebImage) <SDWebImageManagerDelegate>
