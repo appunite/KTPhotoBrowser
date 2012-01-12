@@ -10,13 +10,12 @@
 
 @protocol KTThumbsViewDataSource;
 @class KTThumbsViewController;
-@class KTThumbView;
 
 @interface KTThumbsView : UIScrollView <UIScrollViewDelegate>
 {
 @private
-   id <KTThumbsViewDataSource> dataSource_;
-   KTThumbsViewController *controller_;
+   id <KTThumbsViewDataSource> __unsafe_unretained dataSource_;
+   KTThumbsViewController *__unsafe_unretained controller_;
    BOOL thumbsHaveBorder_;
    NSInteger thumbsPerRow_;
    CGSize thumbSize_;
@@ -30,13 +29,13 @@
    int lastItemsPerRow_;
 }
 
-@property (nonatomic, assign) id<KTThumbsViewDataSource> dataSource;
-@property (nonatomic, assign) KTThumbsViewController *controller;
+@property (nonatomic, unsafe_unretained) id<KTThumbsViewDataSource> dataSource;
+@property (nonatomic, unsafe_unretained) KTThumbsViewController *controller;
 @property (nonatomic, assign) BOOL thumbsHaveBorder;
 @property (nonatomic, assign) NSInteger thumbsPerRow;
 @property (nonatomic, assign) CGSize thumbSize;
 
-- (KTThumbView *)dequeueReusableThumbView;
+- (UIView *)dequeueReusableThumbView;
 - (void)reloadData;
 
 @end
@@ -44,6 +43,6 @@
 @protocol KTThumbsViewDataSource <NSObject>
 @required
 - (NSInteger)thumbsViewNumberOfThumbs:(KTThumbsView *)thumbsView;
-- (KTThumbView *)thumbsView:(KTThumbsView *)thumbsView thumbForIndex:(NSInteger)index;
+- (UIView *)thumbsView:(KTThumbsView *)thumbsView thumbForIndex:(NSInteger)index;
 
 @end

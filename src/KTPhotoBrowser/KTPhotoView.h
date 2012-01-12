@@ -13,15 +13,15 @@
 
 @interface KTPhotoView : UIScrollView <UIScrollViewDelegate>
 {
-   UIImageView *imageView_;
-   KTPhotoScrollViewController *scroller_;
+   UIView *imageView_;
+   KTPhotoScrollViewController *__unsafe_unretained scroller_;
    NSInteger index_;
 }
 
-@property (nonatomic, assign) KTPhotoScrollViewController *scroller;
+@property (nonatomic, unsafe_unretained) KTPhotoScrollViewController *scroller;
 @property (nonatomic, assign) NSInteger index;
 
-- (void)setImage:(UIImage *)newImage;
+- (void)setImageView:(UIView *)newImageView;
 - (void)turnOffZoom;
 
 - (CGPoint)pointToCenterAfterRotation;

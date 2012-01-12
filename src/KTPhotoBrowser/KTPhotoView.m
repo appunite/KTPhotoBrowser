@@ -11,7 +11,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface KTPhotoView (KTPrivateMethods)
-- (void)loadSubviewsWithFrame:(CGRect)frame;
 - (BOOL)isZoomed;
 - (void)toggleChromeDisplay;
 @end
@@ -23,8 +22,7 @@
 
 - (void)dealloc 
 {
-   [imageView_ release], imageView_ = nil;
-   [super dealloc];
+   imageView_ = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -35,21 +33,18 @@
       [self setMaximumZoomScale:5.0];
       [self setShowsHorizontalScrollIndicator:NO];
       [self setShowsVerticalScrollIndicator:NO];
-      [self loadSubviewsWithFrame:frame];
    }
    return self;
 }
 
-- (void)loadSubviewsWithFrame:(CGRect)frame
-{
-   imageView_ = [[UIImageView alloc] initWithFrame:frame];
-   [imageView_ setContentMode:UIViewContentModeScaleAspectFit];
-   [self addSubview:imageView_];
-}
-
-- (void)setImage:(UIImage *)newImage 
-{
-   [imageView_ setImage:newImage];
+- (void)setImageView:(UIView *)newImageView {
+    if (imageView_ != nil) {
+        [imageView_ removeFromSuperview];
+        imageView_ = nil;
+    }
+    imageView_ = newImageView;
+    [imageView_ setContentMode:UIViewContentModeScaleAspectFit];
+    [self addSubview:imageView_];
 }
 
 - (void)layoutSubviews 

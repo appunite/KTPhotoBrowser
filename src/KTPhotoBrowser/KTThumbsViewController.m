@@ -8,7 +8,6 @@
 
 #import "KTThumbsViewController.h"
 #import "KTThumbsView.h"
-#import "KTThumbView.h"
 #import "KTPhotoScrollViewController.h"
 
 
@@ -21,9 +20,8 @@
 @synthesize dataSource = dataSource_;
 
 - (void)dealloc {
-   [scrollView_ release], scrollView_ = nil;
+   scrollView_ = nil;
    
-   [super dealloc];
 }
 
 - (void)loadView {
@@ -57,10 +55,8 @@
    
    // Retain a reference to the scroll view.
    scrollView_ = scrollView;
-   [scrollView_ retain];
    
    // Release the local scroll view reference.
-   [scrollView release];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,7 +115,6 @@
                                                   andStartWithPhotoAtIndex:index];
   
    [[self navigationController] pushViewController:newController animated:YES];
-   [newController release];
 }
 
 
@@ -132,24 +127,12 @@
    return count;
 }
 
-- (KTThumbView *)thumbsView:(KTThumbsView *)thumbsView thumbForIndex:(NSInteger)index
+- (UIView *)thumbsView:(KTThumbsView *)thumbsView thumbForIndex:(NSInteger)index
 {
-   KTThumbView *thumbView = [thumbsView dequeueReusableThumbView];
-   if (!thumbView) {
-      thumbView = [[[KTThumbView alloc] initWithFrame:CGRectZero] autorelease];
-      [thumbView setController:self];
-   }
-
-   // Set thumbnail image.
-   if ([dataSource_ respondsToSelector:@selector(thumbImageAtIndex:thumbView:)] == NO) {
-      // Set thumbnail image synchronously.
-      UIImage *thumbImage = [dataSource_ thumbImageAtIndex:index];
-      [thumbView setThumbImage:thumbImage];
-   } else {
-      // Set thumbnail image asynchronously.
-      [dataSource_ thumbImageAtIndex:index thumbView:thumbView];
-   }
-   
+   UIView *thumbView = [thumbsView dequeueReusableThumbView];
+    if (!thumbView) {
+        thumbView = [dataSource_ thumbImageAtIndex:index];
+    }
    return thumbView;
 }
 

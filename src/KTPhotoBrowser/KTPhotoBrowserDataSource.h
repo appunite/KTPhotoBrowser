@@ -15,15 +15,12 @@
 @required
 - (NSInteger)numberOfPhotos;
 
-@optional
 
 // Implement either these, for synchronous images…
-- (UIImage *)imageAtIndex:(NSInteger)index;
-- (UIImage *)thumbImageAtIndex:(NSInteger)index;
+- (UIView *)imageAtIndex:(NSInteger)index;
+- (UIView *)thumbImageAtIndex:(NSInteger)index;
 
-// …or these, for asynchronous images.
-- (void)imageAtIndex:(NSInteger)index photoView:(KTPhotoView *)photoView;
-- (void)thumbImageAtIndex:(NSInteger)index thumbView:(KTThumbView *)thumbView;
+@optional
 
 - (void)deleteImageAtIndex:(NSInteger)index;
 - (void)exportImageAtIndex:(NSInteger)index;

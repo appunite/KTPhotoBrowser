@@ -9,7 +9,6 @@
 #import "KTPhotoScrollViewController.h"
 #import "KTPhotoBrowserDataSource.h"
 #import "KTPhotoBrowserGlobal.h"
-#import "KTPhotoView.h"
 
 const CGFloat ktkDefaultPortraitToolbarHeight   = 44;
 const CGFloat ktkDefaultLandscapeToolbarHeight  = 33;
@@ -45,22 +44,21 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 
 - (void)dealloc 
 {
-   [nextButton_ release], nextButton_ = nil;
-   [previousButton_ release], previousButton_ = nil;
-   [scrollView_ release], scrollView_ = nil;
-   [toolbar_ release], toolbar_ = nil;
-   [photoViews_ release], photoViews_ = nil;
+   nextButton_ = nil;
+   previousButton_ = nil;
+   scrollView_ = nil;
+   toolbar_ = nil;
+   photoViews_ = nil;
   
-   [dataSource_ release], dataSource_ = nil;  
+   dataSource_ = nil;  
    
-   [super dealloc];
 }
 
 - (id)initWithDataSource:(id <KTPhotoBrowserDataSource>)dataSource andStartWithPhotoAtIndex:(NSUInteger)index 
 {
    if (self = [super init]) {
      startWithIndex_ = index;
-     dataSource_ = [dataSource retain];
+     dataSource_ = dataSource;
      
      // Make sure to set wantsFullScreenLayout or the photo
      // will not display behind the status bar.
@@ -93,9 +91,8 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    
    [[self view] addSubview:newView];
    
-   scrollView_ = [newView retain];
+   scrollView_ = newView;
    
-   [newView release];
    
    nextButton_ = [[UIBarButtonItem alloc] 
                   initWithImage:KTLoadImageFromBundle(@"nextIcon.png")
@@ -150,10 +147,6 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    [toolbar_ setItems:toolbarItems];
    [[self view] addSubview:toolbar_];
    
-   if (trashButton) [trashButton release];
-   if (exportButton) [exportButton release];
-   [toolbarItems release];
-   [space release];
 }
 
 - (void)setTitleWithCurrentPhotoIndex 
@@ -304,7 +297,14 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    return pageFrame;
 }
 
+- (void)handleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded)   
+    {         // handling code  
+        [self toggleChromeDisplay];
+    } 
+}
 
+    
 #pragma mark -
 #pragma mark Photo (Page) Management
 
@@ -315,30 +315,18 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    }
    
    id currentPhotoView = [photoViews_ objectAtIndex:index];
-   if (NO == [currentPhotoView isKindOfClass:[KTPhotoView class]]) {
-      // Load the photo view.
-      CGRect frame = [self frameForPageAtIndex:index];
-      KTPhotoView *photoView = [[KTPhotoView alloc] initWithFrame:frame];
-      [photoView setScroller:self];
-      [photoView setIndex:index];
-      [photoView setBackgroundColor:[UIColor clearColor]];
-      
-      // Set the photo image.
-      if (dataSource_) {
-         if ([dataSource_ respondsToSelector:@selector(imageAtIndex:photoView:)] == NO) {
-            UIImage *image = [dataSource_ imageAtIndex:index];
-            [photoView setImage:image];
-         } else {
-            [dataSource_ imageAtIndex:index photoView:photoView];
-         }
-      }
-      
-      [scrollView_ addSubview:photoView];
-      [photoViews_ replaceObjectAtIndex:index withObject:photoView];
-      [photoView release];
+   if ([currentPhotoView isKindOfClass:[UIView class]]) {
+//       UIView * view = (UIView *) currentPhotoView;
+//       [view turnOffZoom];
    } else {
-      // Turn off zooming.
-      [currentPhotoView turnOffZoom];
+       // Load the photo view.
+       UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+       CGRect frame = [self frameForPageAtIndex:index];
+       UIView * photoView = [dataSource_ imageAtIndex:index];
+       [photoView setFrame:frame];
+       [photoView addGestureRecognizer:tapGestureRecognizer];
+       [scrollView_ addSubview:photoView];
+       [photoViews_ replaceObjectAtIndex:index withObject:photoView];
    }
 }
 
@@ -349,7 +337,7 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    }
    
    id currentPhotoView = [photoViews_ objectAtIndex:index];
-   if ([currentPhotoView isKindOfClass:[KTPhotoView class]]) {
+   if ([currentPhotoView isKindOfClass:[UIView class]]) {
       [currentPhotoView removeFromSuperview];
       [photoViews_ replaceObjectAtIndex:index withObject:[NSNull null]];
    }
@@ -390,16 +378,6 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 - (void)layoutScrollViewSubviews
 {
    [self setScrollViewContentSize];
-
-   NSArray *subviews = [scrollView_ subviews];
-   
-   for (KTPhotoView *photoView in subviews) {
-      CGPoint restorePoint = [photoView pointToCenterAfterRotation];
-      CGFloat restoreScale = [photoView scaleToRestoreAfterRotation];
-      [photoView setFrame:[self frameForPageAtIndex:[photoView index]]];
-      [photoView setMaxMinZoomScalesForCurrentBounds];
-      [photoView restoreCenterPoint:restorePoint scale:restoreScale];
-   }
    
    // adjust contentOffset to preserve page location based on values collected prior to location
    CGFloat pageWidth = scrollView_.bounds.size.width;
@@ -576,7 +554,6 @@ const CGFloat ktkDefaultToolbarHeight = 44;
                                               destructiveButtonTitle:NSLocalizedString(@"Delete Photo", @"Delete Photo button text.")
                                                    otherButtonTitles:nil];
    [actionSheet showInView:[self view]];
-   [actionSheet release];
 }
 
 - (void) exportPhoto

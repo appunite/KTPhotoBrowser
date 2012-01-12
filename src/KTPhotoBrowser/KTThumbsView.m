@@ -7,7 +7,6 @@
 //
 
 #import "KTThumbsView.h"
-#import "KTThumbView.h"
 #import "KTThumbsViewController.h"
 
 
@@ -21,8 +20,7 @@
 
 - (void)dealloc
 {
-   [reusableThumbViews_ release], reusableThumbViews_ = nil;
-   [super dealloc];
+   reusableThumbViews_ = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -48,15 +46,14 @@
    return self;
 }
 
-- (KTThumbView *)dequeueReusableThumbView
+- (UIView *)dequeueReusableThumbView
 {
-   KTThumbView *thumbView = [reusableThumbViews_ anyObject];
+   UIView *thumbView = [reusableThumbViews_ anyObject];
    if (thumbView != nil) {
       // The only object retaining the view is the
       // reusableThumbViews set, so we retain/autorelease
       // it before returning it so that it's not immediately
       // deallocated when removed form the set.
-      [[thumbView retain] autorelease];
       [reusableThumbViews_ removeObject:thumbView];
    }
    return thumbView;
@@ -65,7 +62,7 @@
 - (void)queueReusableThumbViews
 {
    for (UIView *view in [self subviews]) {
-      if ([view isKindOfClass:[KTThumbView class]]) {
+      if ([view isKindOfClass:[UIView class]]) {
          [reusableThumbViews_ addObject:view];
          [view removeFromSuperview];
       }
@@ -133,7 +130,7 @@
    // Recycle all thumb views that are no longer visible
    for (UIView *view in [self subviews]) {
       
-      if ([view isKindOfClass:[KTThumbView class]]) {
+      if ([view isKindOfClass:[UIView class]]) {
          // We want to see if the view intersect the scrollView's 
          // bounds, so we need to convert their frames to our own 
          // coordinate system.
@@ -162,7 +159,7 @@
       BOOL isThumbViewMissing = !(index >= firstVisibleIndex_ && index < lastVisibleIndex_);
 
       if (isThumbViewMissing) {
-         KTThumbView *thumbView = [dataSource_ thumbsView:self thumbForIndex:index];
+          UIView *thumbView = [dataSource_ thumbsView:self thumbForIndex:index];
 
          // Set the frame so the view is inserted into the correct position.
          CGRect newFrame = CGRectMake(x, y, thumbSize_.width, thumbSize_.height);
@@ -172,7 +169,6 @@
          // find it later.
          [thumbView setTag:index];
          
-         [thumbView setHasBorder:thumbsHaveBorder_];
          
          [self addSubview:thumbView];
       }

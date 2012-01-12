@@ -242,7 +242,7 @@
 		BBC933C814BEF59000763C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/KTPhotoBrowser.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KTPhotoBrowser/KTPhotoBrowser-Prefix.pch";
@@ -257,7 +257,7 @@
 		BBC933C914BEF59000763C22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/KTPhotoBrowser.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KTPhotoBrowser/KTPhotoBrowser-Prefix.pch";
