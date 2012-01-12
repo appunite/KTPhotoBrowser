@@ -315,14 +315,12 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    }
    
    id currentPhotoView = [photoViews_ objectAtIndex:index];
-   if ([currentPhotoView isKindOfClass:[UIView class]]) {
-//       UIView * view = (UIView *) currentPhotoView;
-//       [view turnOffZoom];
-   } else {
+   if (![currentPhotoView isKindOfClass:[UIView class]]) {
        // Load the photo view.
        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
        CGRect frame = [self frameForPageAtIndex:index];
        UIView * photoView = [dataSource_ imageAtIndex:index];
+       [photoView setTag:index];
        [photoView setFrame:frame];
        [photoView addGestureRecognizer:tapGestureRecognizer];
        [scrollView_ addSubview:photoView];
@@ -378,6 +376,11 @@ const CGFloat ktkDefaultToolbarHeight = 44;
 - (void)layoutScrollViewSubviews
 {
    [self setScrollViewContentSize];
+    
+    NSArray *subviews = [scrollView_ subviews];
+    for (UIView *view in subviews) {
+        [view setFrame:[self frameForPageAtIndex:[view tag]]];
+    }
    
    // adjust contentOffset to preserve page location based on values collected prior to location
    CGFloat pageWidth = scrollView_.bounds.size.width;
