@@ -145,6 +145,7 @@
 				BBC933B614BEF59000763C22 /* Sources */,
 				BBC933B714BEF59000763C22 /* Frameworks */,
 				BBC933B814BEF59000763C22 /* Headers */,
+				BBF0286614D303D800E67053 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,6 +180,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBF0286614D303D800E67053 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh Scripts/CopyHeadersToLegacyBuildDir.command";
+			shellScript = "";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBC933B614BEF59000763C22 /* Sources */ = {
